@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Figtree-Bold';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('./Figtree-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Figtree-Regular';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('./Figtree-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Salty-Candy';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('./Salty-Candy.woff') format('woff');
+}

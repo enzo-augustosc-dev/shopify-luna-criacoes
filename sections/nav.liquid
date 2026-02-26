@@ -1,0 +1,265 @@
+<nav>
+  <img
+    src="{{ 'logo.svg' | asset_url }}"
+    alt="Brecho do Neném"
+    class="logo">
+  <div class="busca">
+    <img src="{{ 'icone-lupa-cinza.svg' | asset_url }}" alt="Buscar">
+    <input type="text" placeholder="Buscar no brecho do neném">
+    <div class="resultados"></div>
+  </div>
+  <div class="botoes">
+    <a href="" class="whatsapp botao">
+      <img src="{{ 'icone-whatsapp-azul.svg' | asset_url }}" alt="WhatsApp">
+    </a>
+    <a href="" class="usuario botao">
+      <img src="{{ 'icone-usuario-branco.svg' | asset_url }}" alt="Usuário">
+    </a>
+    <button class="carrinho botao">
+      <img src="{{ 'icone-carrinho-branco.svg' | asset_url }}" alt="Carrinho">
+    </button>
+  </div>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--cor-branco);
+    height: 80px;
+    padding: 0 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  nav img.logo {
+    width: 200px;
+  }
+  nav .busca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  nav .busca input {
+    width: 300px;
+    height: 55px;
+    font-family: var(--regular);
+    font-size: var(--f2);
+    color: var(--cor-preto);
+    background-color: var(--cor-gelo);
+    border: 1px solid var(--cor-gelo);
+    border-radius: 50px;
+    padding: 0 20px 0 55px;
+    transition: all 0.3s;
+  }
+  nav .busca input::placeholder {
+    color: var(--cor-cinza);
+  }
+  nav .busca input:focus {
+    border: 1px solid var(--cor-azul);
+  }
+  nav .busca img {
+    position: absolute;
+    left: 20px;
+    width: 22px;
+    pointer-events: none;
+  }
+  nav .botoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  nav .botoes .botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%
+  }
+  nav .botoes .botao img {
+    width: 18px;
+    height: 18px;
+  }
+  nav .botoes a.whatsapp {
+    background-color: var(--cor-azul-claro);
+  }
+  nav .botoes a.usuario {
+    background-color: var(--cor-azul);
+    margin: 0 10px
+  }
+  nav .botoes button.carrinho {
+    background-color: var(--cor-azul);
+  }
+  nav .busca .resultados {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    background-color: var(--cor-branco);
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid var(--cor-gelo);
+    position: fixed;
+    top: 80px;
+  }
+  nav .busca .resultados a.resultado {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0 0 20px
+  }
+  nav .busca .resultados a.resultado .foto {
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--cor-gelo);
+    margin: 0 10px 0 0;
+  }
+  nav .busca .resultados a.resultado span {
+    font-family: var(--regular);
+    font-size: var(--f2);
+    color: var(--cor-preto);
+    transition: all 0.3s;
+  }
+  nav .busca .resultados a.resultado:hover span {
+    color: var(--cor-azul);
+  }
+  nav .busca .resultados h3 {
+    font-family: var(--regular);
+    font-size: var(--f2);
+    color: var(--cor-cinza);
+    text-align: center;
+  }
+  nav .busca .resultados .buscando {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  nav .busca .resultados .buscando span {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--cor-azul);
+    border-top: 2px solid transparent;
+    animation: girar 1s linear infinite;
+  }
+  @keyframes girar {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    nav {
+      height: 60px;
+      padding: 0 20px;
+    }
+    nav img.logo {
+      width: 150px;
+    }
+    nav .busca {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 100%
+    }
+    nav .busca input {
+      width: 100%;
+      height: 50px;
+      border-radius: 0;
+    }
+    nav .busca img {
+      width: 18px;
+    }
+    nav .botoes .botao {
+      width: 40px;
+      height: 40px;
+    }
+    nav .botoes .botao img {
+      width: 15px;
+      height: 15px;
+    }
+    nav .busca .resultados {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 0;
+      padding: 20px;
+      top: 110px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Busca do nav
+    const buscaInput = document.querySelector('nav .busca input')
+    const resultadosBusca = document.querySelector('nav .busca .resultados')
+
+    if (buscaInput && resultadosBusca) {
+      let timeoutBusca
+      buscaInput.addEventListener('input', function () {
+        const termo = this.value.trim()
+        clearTimeout(timeoutBusca)
+        if (termo.length < 1) {
+          resultadosBusca.style.display = 'none'
+          resultadosBusca.innerHTML = ''
+          return
+        }
+        // Pequeno delay para evitar requisições em excesso
+        timeoutBusca = setTimeout(() => {
+          resultadosBusca.innerHTML = '<div class="buscando"><span></span></div>'
+          resultadosBusca.style.display = 'flex'
+          fetch(`/search/suggest.json?q=${encodeURIComponent(termo)}&resources[type]=product&resources[limit]=10`)
+            .then((res) => res.json())
+            .then((data) => {
+              const produtos = data.resources && data.resources.results && data.resources.results.products ? data.resources.results.products : []
+              if (produtos.length === 0) {
+                resultadosBusca.innerHTML = '<h3>Nenhum produto encontrado.</h3>'
+                return
+              }
+              resultadosBusca.innerHTML = produtos
+                .map(
+                  (produto) => `
+                <a href="${produto.url}" class="resultado">
+                  <div class="foto" style="background-image: url('${produto.image || '/assets/banner-capa.png'}')"></div>
+                  <span>${produto.title}</span>
+                </a>
+              `
+                )
+                .join('')
+            })
+            .catch(() => {
+              resultadosBusca.innerHTML = '<h3>Erro ao buscar produtos.</h3>'
+            })
+        }, 200)
+      })
+      // Esconde o balão ao clicar fora
+      document.addEventListener('click', function (e) {
+        if (!buscaInput.contains(e.target) && !resultadosBusca.contains(e.target)) {
+          resultadosBusca.style.display = 'none'
+        }
+      })
+      // Mostra o balão ao focar se já tem texto
+      buscaInput.addEventListener('focus', function () {
+        if (this.value.trim().length > 0 && resultadosBusca.innerHTML) {
+          resultadosBusca.style.display = 'flex'
+        }
+      })
+    }
+  })
+</script>

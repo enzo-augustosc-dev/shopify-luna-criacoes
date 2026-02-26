@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "produto": {
+      "type": "produto"
+    },
+    "slide": {
+      "type": "slide"
+    }
+  },
+  "order": ["produto", "slide"]
+}
