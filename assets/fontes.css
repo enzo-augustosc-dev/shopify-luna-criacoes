@@ -5,17 +5,27 @@
   font-display: swap;
   src: url('./Figtree-Bold.woff') format('woff');
 }
+
 @font-face {
-  font-family: 'Figtree-Regular';
+  font-family: 'Figtree-Light';
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: url('./Figtree-Regular.woff') format('woff');
+  src: url('./Figtree-Light.woff') format('woff');
 }
+
 @font-face {
-  font-family: 'Salty-Candy';
+  font-family: 'Figtree-SemiBold';
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: url('./Salty-Candy.woff') format('woff');
+  src: url('./Figtree-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'GreatVibes';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('./GreatVibes-Regular.woff') format('woff');
 }
