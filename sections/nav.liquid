@@ -1,100 +1,138 @@
 <nav>
-  <img
-    src="{{ 'logo.svg' | asset_url }}"
-    alt="Brecho do Neném"
-    class="logo">
-  <div class="busca">
-    <img src="{{ 'icone-lupa-cinza.svg' | asset_url }}" alt="Buscar">
-    <input type="text" placeholder="Buscar no brecho do neném">
-    <div class="resultados"></div>
+  <a href="#">
+    <img
+      src="{{ 'logo.svg' | asset_url }}"
+      alt="Luna Criações Artesanato"
+      class="logo">
+  </a>
+
+  <div class="links">
+    <a href="#" class="link">
+      <p>Novidades</p>
+    </a>
+
+    <a href="#" class="link">
+      <p>Sobre</p>
+    </a>
   </div>
+
+  <div class="busca">
+    <input type="text" placeholder="Pesquise na Luna">
+    <img
+      src="{{ 'icone-lupa.svg' | asset_url }}"
+      alt="Barra de Busca">
+  </div>
+
   <div class="botoes">
-    <a href="" class="whatsapp botao">
-      <img src="{{ 'icone-whatsapp-azul.svg' | asset_url }}" alt="WhatsApp">
+    <a href="#" class="botao user">
+      <img
+        src="{{ 'icone-user.svg' | asset_url }}"
+        alt="Ícone de Usuário">
     </a>
-    <a href="" class="usuario botao">
-      <img src="{{ 'icone-usuario-branco.svg' | asset_url }}" alt="Usuário">
+
+    <a href="#" class="botao carrinho">
+      <img
+        src="{{ 'icone-carrinho.svg' | asset_url }}"
+        alt="Ícone de Carrinho">
     </a>
-    <button class="carrinho botao">
-      <img src="{{ 'icone-carrinho-branco.svg' | asset_url }}" alt="Carrinho">
-    </button>
   </div>
 </nav>
 
 <style>
-  nav {
+  nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--cor-branco);
-    height: 80px;
+    background-color: var(--cor-background);
+
+    height: 90px;
     padding: 0 80px;
     width: 100%;
-    position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+
+    font-family: var(--light);
+    position: fixed;
+    z-index: 5;
   }
+
   nav img.logo {
     width: 200px;
   }
+
+  nav .links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    font-size: 1.25rem;
+  }
+
+  nav .links a {
+    color: var(--cor-verde-principal);
+  }
+
   nav .busca {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
   }
+
   nav .busca input {
-    width: 300px;
+    width: 500px;
     height: 55px;
-    font-family: var(--regular);
-    font-size: var(--f2);
-    color: var(--cor-preto);
-    background-color: var(--cor-gelo);
+    border-radius: 30px;
+    background-color: var(--cor-gelo-claro);
     border: 1px solid var(--cor-gelo);
-    border-radius: 50px;
+
+    font-family: var(--light);
+    font-size: 1rem;
     padding: 0 20px 0 55px;
-    transition: all 0.3s;
+    transition: all 0.3s
   }
+
   nav .busca input::placeholder {
-    color: var(--cor-cinza);
+    color: var(--cor-verde-principal);
   }
-  nav .busca input:focus {
-    border: 1px solid var(--cor-azul);
+  nav .busca input:hover {
+    border: 1px solid var(--cor-verde-principal-hover);
   }
+
   nav .busca img {
     position: absolute;
     left: 20px;
     width: 22px;
     pointer-events: none;
   }
+
   nav .botoes {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   nav .botoes .botao {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    background-color: var(--cor-verde-principal-hover);
+    margin: 0 10px;
   }
+
   nav .botoes .botao img {
-    width: 18px;
-    height: 18px;
+    width: 30px;
+    height: 30px;
   }
-  nav .botoes a.whatsapp {
-    background-color: var(--cor-azul-claro);
-  }
-  nav .botoes a.usuario {
-    background-color: var(--cor-azul);
-    margin: 0 10px
-  }
-  nav .botoes button.carrinho {
-    background-color: var(--cor-azul);
-  }
+
+</style>
+
+
+{% comment %} <style>
   nav .busca .resultados {
     display: none;
     flex-direction: column;
@@ -202,7 +240,7 @@
       top: 110px;
     }
   }
-</style>
+</style> {% endcomment %}
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
