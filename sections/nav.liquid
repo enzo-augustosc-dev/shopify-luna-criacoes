@@ -21,6 +21,8 @@
     <img
       src="{{ 'icone-lupa.svg' | asset_url }}"
       alt="Barra de Busca">
+      <div class="resultados">
+      </div>
   </div>
 
   <div class="botoes">
@@ -129,56 +131,62 @@
     height: 30px;
   }
 
-</style>
-
-
-{% comment %} <style>
   nav .busca .resultados {
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
     width: 100%;
     max-width: 600px;
-    height: 300px;
-    background-color: var(--cor-branco);
-    border-radius: 20px;
+    height: 370px;
     padding: 20px;
-    border: 1px solid var(--cor-gelo);
+    background-color: var(--cor-branco);
+
     position: fixed;
-    top: 80px;
+    border-radius: 20px;
+    border: 1px solid var(--cor-gelo);
+    top: 75px;
   }
+
   nav .busca .resultados a.resultado {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
     width: 100%;
-    margin: 0 0 20px
+    margin: 0 0 20px;
   }
+
   nav .busca .resultados a.resultado .foto {
     width: 50px;
     height: 50px;
     border-radius: 20px;
-    background-size: cover;
+
     background-position: center;
-    background-color: var(--cor-gelo);
+    background-size: cover;
+    background-color: var(--cor-cinza);
     margin: 0 10px 0 0;
   }
+
   nav .busca .resultados a.resultado span {
-    font-family: var(--regular);
-    font-size: var(--f2);
+    font-family: var(--light);
+    font-size: 1rem;
     color: var(--cor-preto);
     transition: all 0.3s;
   }
+
   nav .busca .resultados a.resultado:hover span {
-    color: var(--cor-azul);
+    color: var(--cor-verde-principal)
   }
+
   nav .busca .resultados h3 {
-    font-family: var(--regular);
-    font-size: var(--f2);
+    font-family: var(--light);
+    font-size: 1rem;
     color: var(--cor-cinza);
     text-align: center;
   }
+
   nav .busca .resultados .buscando {
     display: flex;
     align-items: center;
@@ -186,15 +194,19 @@
     width: 100%;
     height: 100%;
   }
+
   nav .busca .resultados .buscando span {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 2px solid var(--cor-azul);
+
+    border: 2px solid var(--cor-verde-principal);
     border-top: 2px solid transparent;
+
     animation: girar 1s linear infinite;
   }
-  @keyframes girar {
+
+  @keyframes {
     0% {
       transform: rotate(0deg);
     }
@@ -202,6 +214,11 @@
       transform: rotate(360deg);
     }
   }
+
+</style>
+
+
+{% comment %} <style>
   @media screen and (max-width: 1000px) {
     nav {
       height: 60px;
@@ -262,7 +279,7 @@
         timeoutBusca = setTimeout(() => {
           resultadosBusca.innerHTML = '<div class="buscando"><span></span></div>'
           resultadosBusca.style.display = 'flex'
-          fetch(`/search/suggest.json?q=${encodeURIComponent(termo)}&resources[type]=product&resources[limit]=10`)
+          fetch(`/search/suggest.json?q=${encodeURIComponent(termo)}&resources[type]=product&resources[limit]=5`)
             .then((res) => res.json())
             .then((data) => {
               const produtos = data.resources && data.resources.results && data.resources.results.products ? data.resources.results.products : []
