@@ -9,22 +9,17 @@
  */
 {
   "sections": {
-    "header": {
-      "type": "header",
+    "headerCollection": {
+      "type": "headerCollection",
       "settings": {}
     },
-    "categorias": {
-      "type": "categorias",
-      "settings": {}
-    },
-    "slide": {
-      "type": "slide",
+    "produtos": {
+      "type": "produtos",
       "settings": {}
     }
   },
   "order": [
-    "header",
-    "categorias",
-    "slide"
+    "headerCollection",
+    "produtos"
   ]
 }

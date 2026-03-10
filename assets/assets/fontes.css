@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Figtree-Bold';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('./Figtree-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Figtree-Light';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('./Figtree-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Figtree-SemiBold';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('./Figtree-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'GreatVibes';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('./GreatVibes-Regular.woff') format('woff');
+}

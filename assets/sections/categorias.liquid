@@ -1,0 +1,138 @@
+<section class="categorias">
+  <h2>Busque poR categoRias</h2>
+  <div class="itens">
+    {% for collection in collections %}
+      <a href="{{ collection.url }}" class="item">
+        <img src="{{ collection.image | image_url: width: 200 }}" alt="{{ collection.title }}">
+        <p>{{ collection.title }}</p>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  section.categorias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 120px 80px 0
+  }
+  section.categorias h2 {
+    font-family: var(--candy);
+    font-size: var(--f6);
+    color: var(--cor-preto);
+    margin: 0 0 30px;
+  }
+  section.categorias .itens {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  section.categorias .itens .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(20% - 15px);
+    background: linear-gradient(135deg, var(--cor-branco) 0%, #f8f9ff 100%);
+    border-radius: 30px;
+    padding: 25px 15px 25px 25px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  section.categorias .itens .item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+  }
+  section.categorias .itens .item::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.6s ease;
+  }
+  section.categorias .itens .item:hover {
+    transform: translateY(-8px) scale(1.05) rotateX(5deg);
+    background-color: var(--cor-azul);
+  }
+  section.categorias .itens .item:hover::before {
+    left: 100%;
+  }
+  section.categorias .itens .item:hover::after {
+    width: 300px;
+    height: 300px;
+  }
+  section.categorias .itens .item:hover img {
+    transform: scale(1.2) rotate(10deg);
+    filter: brightness(1.2);
+  }
+  section.categorias .itens .item:hover p {
+    color: var(--cor-azul);
+    transform: translateX(5px);
+  }
+  section.categorias .itens .item img {
+    width: 60px;
+    max-width: 60px;
+    margin: 0 10px 0 0;
+    transition: all 0.4s;
+  }
+  section.categorias .itens .item p {
+    font-family: var(--regular);
+    font-size: var(--f2);
+    color: var(--cor-preto);
+    line-height: 1.5;
+    width: 100%;
+    max-width: 90px;
+    transition: all 0.4s;
+  }
+  @media screen and (max-width: 1000px) {
+    section.categorias {
+      width: 100%;
+      padding: 140px 0 0
+    }
+    section.categorias h2 {
+      font-size: var(--f5);
+      margin: 0
+    }
+    section.categorias .itens {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      overflow-y: scroll;
+      padding: 30px 20px;
+    }
+    section.categorias .itens .item {
+      flex-direction: column;
+      width: 140px;
+      min-width: 140px;
+      padding: 20px 15px 20px 20px;
+      margin: 0 15px 0 0
+    }
+    section.categorias .itens .item img {
+      width: 40px;
+      max-width: 40px;
+      margin: 0 0 10px;
+    }
+    section.categorias .itens .item p {
+      text-align: center;
+    }
+  }
+</style>
+
+<script></script>

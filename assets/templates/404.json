@@ -9,22 +9,12 @@
  */
 {
   "sections": {
-    "header": {
-      "type": "header",
-      "settings": {}
-    },
-    "categorias": {
-      "type": "categorias",
-      "settings": {}
-    },
-    "slide": {
-      "type": "slide",
+    "404": {
+      "type": "404",
       "settings": {}
     }
   },
   "order": [
-    "header",
-    "categorias",
-    "slide"
+    "404"
   ]
 }

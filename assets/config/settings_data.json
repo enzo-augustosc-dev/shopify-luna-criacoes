@@ -8,23 +8,12 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "header": {
-      "type": "header",
-      "settings": {}
-    },
-    "categorias": {
-      "type": "categorias",
-      "settings": {}
-    },
-    "slide": {
-      "type": "slide",
-      "settings": {}
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {}
+      }
     }
-  },
-  "order": [
-    "header",
-    "categorias",
-    "slide"
-  ]
+  }
 }

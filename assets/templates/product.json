@@ -9,12 +9,8 @@
  */
 {
   "sections": {
-    "header": {
-      "type": "header",
-      "settings": {}
-    },
-    "categorias": {
-      "type": "categorias",
+    "produto": {
+      "type": "produto",
       "settings": {}
     },
     "slide": {
@@ -23,8 +19,7 @@
     }
   },
   "order": [
-    "header",
-    "categorias",
+    "produto",
     "slide"
   ]
 }
