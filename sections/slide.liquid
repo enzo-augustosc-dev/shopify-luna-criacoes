@@ -1,9 +1,18 @@
-<section class="slide"></section>
+{% comment %} <h2> {{ collections['colares'].title }}</h2>
+
+{% for product in collections['colares'].products %}
+
+  <div class="card-produto">
+    <a href="{{ product.url }}">
+    <img class="imagem-produto" src="{{ product | image_url: width: 400}}">
+    <h3 class="nome-produto">{{ product.title }}</h3>
+    <p class="preco-produto">{{ product.price | money }}</p>
+    </a>
+  </div>
+{% endfor %}
+
 
 <style>
-  section.slide {
-    display: flex;
-  }
 </style>
 
-<script></script>
+<script></script> {% endcomment %}
