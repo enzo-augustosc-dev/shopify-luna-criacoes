@@ -1,26 +1,52 @@
 <section class="produtos">
+  <h2 class="titulo-produto"> {{ collections['confira-nossos-produtos'].title }}</h2>
 
+{% for product in collections['confira-nossos-produtos'].products %}
 
-
-
-{% comment %} <h2> {{ collections['colares'].title }}</h2>
-
-{% for product in collections['colares'].products %}
-
-  <div class="card-produto">
-    <a href="{{ product.url }}">
-    <img class="imagem-produto" src="{{ product | image_url: width: 400}}">
-    <h3 class="nome-produto">{{ product.title }}</h3>
-    <p class="preco-produto">{{ product.price | money }}</p>
-    </a>
+  <div class="lista-produtos">
+    <div class="card-produto">
+      <a href="{{ product.url }}">
+      <img class="imagem-produto" src="{{ product | image_url}}">
+      <h3 class="nome-produto">{{ product.title }}</h3>
+      <p class="preco-produto">{{ product.price | money }}</p>
+      </a>
+    </div>
   </div>
 {% endfor %}
 
+</section>
+
 
 <style>
+  .produtos {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 0 80px;
+    width: 100%;
+  }
+
+  .titulo-produto {
+    margin-bottom: 20px;
+    width: 100%
+  }
+
+  .lista-produtos {
+
+  }
+
+  .card-produto {
+
+  }
+
+  .imagem-produto{
+    width: 420px;
+    height: 400px;
+    border-radius: 50px;
+  }
 </style>
 
-<script></script> {% endcomment %}
+<script></script>
 
 
 

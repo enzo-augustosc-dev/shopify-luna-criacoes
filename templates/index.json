@@ -11,11 +11,16 @@
     "slide": {
       "type": "slide",
       "settings": {}
+    },
+    "produtos": {
+      "type": "produtos",
+      "settings": {}
     }
   },
   "order": [
     "header",
     "categorias",
-    "slide"
+    "slide",
+    "produtos"
   ]
 }
