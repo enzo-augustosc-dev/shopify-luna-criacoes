@@ -38,10 +38,6 @@ body.bloquear {
   overflow: hidden;
 }
 
-::selection {
-  color: var(--cor-branco);
-  background-color: var(--cor-azul);
-}
 
 a,
 img,
