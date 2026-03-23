@@ -4,10 +4,12 @@
 
   <div class="itens">
     {% for collection in collections %}
-      <a class="item" href="{{ collection.url }}">
+       {% unless collection.handle == 'confira-nossos-produtos' %}
+        <a class="item" href="{{ collection.url }}">
         <p>{{ collection.title }}</p>
         <img src="{{ collection.image | image_url}}" alt="{{ collection.title }}">
       </a>
+      {% endunless %}
     {% endfor %}
   </div>
 
