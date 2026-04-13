@@ -1,8 +1,41 @@
-<header class="collection"></header>
+<section class="headerCollection">
+
+  {% if collection.image %}
+    <img
+      class="imagem-collection"
+      src="{{ collection.image | image_url }}"
+      alt="{{ collection.title }}">
+  {% endif %}
+
+  {% if collection.description %}
+    <p class="descricao-collection">
+      {{ collection.description }}
+    </p>
+  {% endif %}
+
+</section>
 
 <style>
-  header.collection {
+  section.headerCollection {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-top: 130px;
+  }
+
+  .imagem-collection {
+    max-width: 200px;
+    margin-bottom: 20px;
+  }
+
+  .descricao-collection + p {
+    font-family: var(--light);
+    color: var(--cor-verde-principal);
+    font-size: 25px;
+
+    margin-bottom: 30px;
   }
 </style>
 
