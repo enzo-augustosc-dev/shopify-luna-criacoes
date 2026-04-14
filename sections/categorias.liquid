@@ -2,9 +2,11 @@
 
   <h2>Compre por Categorias</h2>
 
+  {% assign colecoes_excluidas = 'confira-nossos-produtos,especial-copa-do-mundo' |  split: ',' %}
+
   <div class="itens">
     {% for collection in collections %}
-       {% unless collection.handle == 'confira-nossos-produtos' %}
+       {% unless colecoes_excluidas contains collection.handle %}
         <a class="item" href="{{ collection.url }}">
         <p>{{ collection.title }}</p>
         <img src="{{ collection.image | image_url}}" alt="{{ collection.title }}">
