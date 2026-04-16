@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "novidades": {
+      "type": "novidades",
+      "settings": {}
+    }
+  },
+  "order": [
+    "novidades"
+  ]
+}

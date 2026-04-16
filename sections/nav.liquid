@@ -7,17 +7,13 @@
   </a>
 
   <div class="links">
-    <a href="" class="link">
-      <p>Novidades</p>
-    </a>
 
-    <a href="" class="link">
-      <p>Sobre</p>
-    </a>
+  <ul>
+    {% for link in linklists.main-menu.links %}
+    {{ link.title | link_to: link.url }}
+    {% endfor %}
+  </ul>
 
-    <a href="" class="link">
-      <p>Para sua Casa</p>
-    </a>
   </div>
 
   <div class="busca">
@@ -66,7 +62,7 @@
     width: 200px;
   }
 
-  nav .links {
+  nav .links ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -282,3 +278,22 @@
     }
   })
 </script>
+
+{% schema %}
+{
+  "name": "Navegação - Links",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Navegação - Links"
+    }
+  ]
+}
+{% endschema %}
