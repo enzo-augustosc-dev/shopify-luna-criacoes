@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "paraCasa": {
+      "type": "paraCasa",
+      "settings": {}
+    }
+  },
+  "order": [
+    "paraCasa"
+  ]
+}

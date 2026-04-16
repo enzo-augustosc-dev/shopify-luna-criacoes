@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "sobre": {
+      "type": "sobre",
+      "settings": {}
+    }
+  },
+  "order": [
+    "sobre"
+  ]
+}
