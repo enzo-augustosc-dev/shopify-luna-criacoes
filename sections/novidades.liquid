@@ -1,6 +1,102 @@
 <section class="novidades">
-  <h2>Quer ver os lançamentos da nova coleção?</h2>
-  <p>Produtos novinhos apenas esperando você!</p>
+    <h2 class="titulo-novidades">Quer ver os lançamentos da nova coleção?</h2>
+    <p class="subtitulo-novidades">produtos novinhos apenas esperando você!</p>
+
+    <h3 class="titulo-colec-novidades">{{ collections['especial-copa-do-mundo'].title }}</h3>
+
+  {% for product in collections['especial-copa-do-mundo'].products %}
+
+      <a class="card-produto" href="{{ product.url }}">
+        <img class="imagem-produto" src="{{ product | image_url}}">
+        <h3 class="nome-produto">{{ product.title }}</h3>
+        <p class="preco-produto">{{ product.price | money }}</p>
+        <button>Compre Agora!</button>
+      </a>
+  {% endfor %}
 </section>
 
-<style></style>
+<style>
+  .novidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    padding: 0 80px;
+    width: 100%;
+
+    margin-top: 150px;
+  }
+
+  .novidades .titulo-novidades {
+    font-family: var(--bold);
+    font-size: 60px;
+    text-align: center;
+
+    background: linear-gradient(90deg, var(--cor-verde-principal), var(--cor-verde-principal-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .novidades .subtitulo-novidades {
+    font-size: 25px;
+    font-family: var(--light);
+    color: var(--cor-verde-principal);
+    text-align: center;
+
+    margin-bottom: 80px;
+  }
+
+  .novidades .titulo-colec-novidades {
+    font-family: var(--bold);
+    font-size: 60px;
+    text-align: center;
+
+    background: linear-gradient(90deg, var(--cor-verde-principal), var(--cor-verde-principal-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .titulo-novidades, .subtitulo-novidades, .titulo-colec-novidades {
+    width: 100%;
+  }
+
+  .card-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-produto .nome-produto {
+    margin-top: 10px;
+
+    font-size: 25px;
+    font-family: var(--light);
+    color: var(--cor-preto);
+  }
+
+  .card-produto .preco-produto {
+    font-size: 20px;
+    font-family: var(--bold);
+    color: var(--cor-verde-principal);
+  }
+
+  .imagem-produto{
+    width: 400px;
+    height: 450px;
+    border-radius: 50px;
+  }
+
+  .card-produto button {
+    margin-top: 20px;
+
+    width: 350px;
+    height: 50px;
+    border-radius: 50px;
+
+    background-color: var(--cor-verde-principal);
+    font-family: var(--bold);
+    font-size: 20px;
+
+    margin-bottom: 70px;
+  }
+</style>
