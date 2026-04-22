@@ -1,0 +1,94 @@
+<section class="sobre">
+
+  <div class="sobre-mim">
+    <img
+      src="{{ 'sobre-imagem.png' | asset_url }}"
+      alt="Luciana Soares"
+      class="sobre-mim-foto">
+
+    <div class="sobre-mim-textos">
+      <p>Sobre a responsável pelas Artes</p>
+
+      <h2>Luciana Soares</h2>
+
+      <p>A pandemia trouxe muitas coisar ruins, mas também coisas boas! Com mais tempo disponível e vendo várias coisas no youtube,
+        me deparei com a oportunidade de aprender uma arte que eu admirava, mas ainda não tivera a oportunidade de aprender.</p>
+
+      <p>Minha mãe, uma crocheteira de mão cheia, minha avó materna o dom da costura, minha avó paterna também tecia colchas de crochê,
+        mas essa arte eu não dominava. Aprendi pronto cruz com uma tia muito querida e fiz todo o enxoval das minhas filhas com essa arte maravilhosa,
+        mas a minha paixão agora tinha outro nome: Macramê.</p>
+    </div>
+  </div>
+
+  <div class="sobre-marca">
+    <div class="sobre-marca-textos">
+      <p>Sobre a marca</p>
+
+      <h2>Luna Criações</h2>
+
+      <p>A marca Luna Criações veio do desejo de mostrar minha arte, meus aprendizados e meus feitos... De modo que eu e a marca
+      estamos intrínsecos, sem conseguir separar um do outro. Amo a ideia da lua ser iluminada pelo sol, pelo fato de não ter luz própria,
+      depender de algo maior para ser iluminada.</p>
+
+      <p>A cada novo aprendizado, mais e mais me apaixonava com tantas possibilidades que com poucos nós básicos, me abriam janelas para
+      fazer tantas peças únicas e diferentes. É isso que eu quero compartilhar com o máximo de pessoas!</p>
+    </div>
+
+    <img
+      src="{{ 'logo-grande.svg' | asset_url }}"
+      alt="Luna Criações Artesanato"
+      class="sobre-marca-logo">
+
+  </div>
+
+</section>
+
+<style>
+  .sobre {
+    margin-top: 150px;
+    padding: 0 80px;
+    width: 100%;
+  }
+
+  .sobre-mim, .sobre-marca {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 30px;
+  }
+
+  .sobre-mim-foto {
+    border-radius: 60px;
+  }
+
+  img.sobre-marca-logo {
+    width: 550px;
+
+  }
+
+  .sobre-mim-textos, .sobre-marca-textos {
+    max-width: 900px;
+    margin-left: 50px;
+  }
+
+  .sobre-mim p, .sobre-marca p{
+    font-size: 20px;
+    line-height: 200%;
+
+    font-family: var(--light);
+  }
+
+  .sobre-mim h2, .sobre-marca h2{
+    font-size: 60px;
+
+    font-family: var(--bold);
+    background: linear-gradient(90deg, var(--cor-verde-principal), var(--cor-verde-principal-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+
+
+
+</style>
