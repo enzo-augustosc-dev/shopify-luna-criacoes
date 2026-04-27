@@ -41,11 +41,58 @@
 
   </div>
 
+  <div class="duvidas">
+    <h2>Dúvidas Frequentes</h2>
+
+    <div class="duvidas-conteudo">
+
+      <ul class="itens-duvidas">
+
+        <li class="item-duvidas ativo">
+            <h3 class="pergunta">Trabalhamos com encomendas?</h3>
+
+            <p class="resposta">SIMMM! Você pode entrar em contato conosco via email ou whatsapp para realizar seus pedidos personalizados!</p>
+        </li>
+
+        <li class="item-duvidas">
+            <h3 class="pergunta">Minhas encomendas são personalizaveis?</h3>
+
+            <p class="resposta">SIMMM! Você tem total liberdade de escolha de cores/tamanhos e estilo do seu produto!</p>
+        </li>
+
+        <li class="item-duvidas">
+            <h3 class="pergunta">Trabalhamos com produtos a pronta-entrega?</h3>
+
+            <p class="resposta">Sim, ao acessar a tela do produto desejado, você verá o produto tem ou não estoque disponível!</p>
+        </li>
+
+        <li class="item-duvidas">
+            <h3 class="pergunta">Quais regiões realizamos entrega?</h3>
+
+            <p class="resposta">Atualmente entregamos em todo estado de Goiás-GO</p>
+        </li>
+
+        <li class="item-duvidas">
+            <h3 class="pergunta">Tenho garantia dos meus produtos?</h3>
+
+            <p class="resposta">Sim, você tem 60 dias de garantia sobre qualquer produto adquirido em nossa loja!</p>
+        </li>
+
+        <li class="item-duvidas">
+            <h3 class="pergunta">Como funciona o prazo de envio?</h3>
+
+            <p class="resposta">Por se tratar de produtos artesanais, nossos produtos tem o prazo de 3 a 5 dias para envio, após o pedido!</p>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
 </section>
 
 <style>
   .sobre {
-    margin-top: 150px;
+    margin-top: 180px;
     padding: 0 80px;
     width: 100%;
   }
@@ -88,7 +135,77 @@
     -webkit-text-fill-color: transparent;
   }
 
+  .duvidas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 60px;
+  }
+
+  .duvidas h2 {
+    font-size: 50px;
+    color: var(--cor-verde-principal);
+    font-family: var(--bold);
+
+    margin-bottom: 50px;
+  }
+
+  .duvidas ul {
+    margin-bottom: 20px;
+  }
+
+  .duvidas li .pergunta {
+    font-size: 20px;
+    font-family: var(--light);
+    transition: 0.2s ease;
+
+    margin-bottom: 15px;
+  }
+
+  .resposta {
+    display: none;
+    padding-bottom: 15px;
+    font-size: 15px;
+
+    max-width: 700px;
+  }
+
+  .duvidas .itens-duvidas li {
+    cursor: pointer;
+    list-style-image: url(../assets/seta.png);
+  }
 
 
+  .duvidas .itens-duvidas .ativo h3{
+    font-size: 25px;
+    font-family: var(--bold);
+    color: var(--cor-verde-principal);
+  }
+
+  .duvidas .itens-duvidas .ativo p{
+    font-size: 20px;
+    font-family: var(--light);
+  }
+
+  .duvidas .itens-duvidas .ativo .resposta {
+    display: block;
+  }
 
 </style>
+
+<script>
+
+const itensPerguntasERespostas = document.querySelectorAll(".item-duvidas");
+
+itensPerguntasERespostas.forEach(function (item) {
+  item.addEventListener("click", function () {
+    const itemAtivoAtual = document.querySelector(".item-duvidas.ativo");
+    if (itemAtivoAtual) {
+      itemAtivoAtual.classList.remove("ativo");
+    }
+    item.classList.add("ativo");
+  });
+});
+</script>
