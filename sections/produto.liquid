@@ -1,34 +1,133 @@
-{% comment %} <section class="produto">
+<section class="produto">
 
-<h1>{{ product.title }}</h1>
-<p>{{ product.price | money }}</p>
-<div>
-  {{ product.description }}
+<div class="fotos-produto">
+
+  <div class="imagem-principal">
+    <img
+      id="img-principal"
+      class="imagem-produto"
+      src="{{ product.featured_image | image_url}}"
+      alt="{{ product.featured_image.alt | escape }}">
+  </div>
+
+  <div class="miniaturas">
+    {% for image in product.images %}
+      <img
+        class="miniatura {% if forloop.first %}ativa{% endif %}"
+        src="{{ image | image_url}}"
+        alt="{{ image.alt | escape }}"
+        data-url="{{ image | image_url}}">
+    {% endfor %}
+  </div>
+
 </div>
 
-{% form 'product', product%}
-  <select id="name">
+<div class="informacoes-produto">
+  <h1>{{ product.title }}</h1>
+  <div>
+      {{product.description}}
+  </div>
+  <p>Pelo valor de:</p>
+  <p>{{ product.price | money }}</p>
+
+  {% form 'product', product %}
+
+    <select name="id">
       {% for variant in product.variants %}
-        <option value="{{ variant.id }}">
-            {{variant.title}}
+        <option value= {{ variant.id }}>
+          {{variant.title}}
         </option>
       {% endfor %}
-  </select>
-{%endform%}
+    </select>
 
+    <button type="submit"> Adicionar ao Carrinho</button>
 
+    <button type="submit" name="checkout">Comprar Agora!</button>
+
+  {% endform %}
+
+</div>
 </section>
 
-
-
-
-
-
 <style>
+  .produto {
+    padding: 0 80px;
+    width: 100%;
 
-.produto{
-  margin-top: 400px;
-}
+    margin-top: 180px;
+  }
+
+  .fotos-produto {
+    height: 700px;
+    width: 700px;
+
+    border: 1px solid var(--cor-gelo-claro);
+    border-radius: 50px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .imagem-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    width: 500px;
+    height: 500px;
+
+    margin-top: 40px;
+
+  }
+
+  .imagem-produto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border-radius: 30px;
+
+    transition: opacity 0.3s ease;
+  }
+
+  .miniaturas {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .miniatura {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+
+    object-fit: cover;
+
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.2s;
+  }
+
+  .miniatura.ativa {
+    border-color: var(--cor-verde-principal);
+  }
 </style>
 
-<script></script> {% endcomment %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const miniaturas = document.querySelectorAll('.miniatura');
+    const principal = document.getElementById('img-principal');
+
+    miniaturas.forEach(img => {
+      img.addEventListener('click', function () {
+        principal.src = this.dataset.url;
+
+        miniaturas.forEach(m => m.classList.remove('ativa'));
+        this.classList.add('ativa');
+      });
+    });
+  })
+
+</script>
