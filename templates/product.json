@@ -3,9 +3,14 @@
     "produto": {
       "type": "produto",
       "settings": {}
+    },
+    "produtosConfira": {
+      "type": "produtosConfira",
+      "settings": {}
     }
   },
   "order": [
-    "produto"
+    "produto",
+    "produtosConfira"
   ]
 }
