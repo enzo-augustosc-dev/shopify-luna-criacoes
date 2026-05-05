@@ -27,12 +27,12 @@
   <div>
       {{product.description}}
   </div>
-  <p>Pelo valor de:</p>
-  <p>{{ product.price | money }}</p>
+  <p class="valor">Pelo valor de:</p>
+  <p class="preco">{{ product.price | money }}</p>
 
   {% form 'product', product %}
 
-    <select name="id">
+    <select class="select" name="id">
       {% for variant in product.variants %}
         <option value= {{ variant.id }}>
           {{variant.title}}
@@ -40,9 +40,9 @@
       {% endfor %}
     </select>
 
-    <button type="submit"> Adicionar ao Carrinho</button>
+    <button class="compre-agora" type="submit" name="checkout"> Comprar Agora! </button>
 
-    <button type="submit" name="checkout">Comprar Agora!</button>
+    <button class="adicionar-carrinho" type="submit"> Adicionar ao Carrinho </button>
 
   {% endform %}
 
@@ -51,6 +51,8 @@
 
 <style>
   .produto {
+    display: flex;
+    justify-content: space-around;
     padding: 0 80px;
     width: 100%;
 
@@ -113,6 +115,71 @@
   .miniatura.ativa {
     border-color: var(--cor-verde-principal);
   }
+
+  .informacoes-produto {
+    height: 700px;
+    width: 700px;
+
+    border: 1px solid var(--cor-gelo-claro);
+    border-radius: 50px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .informacoes-produto h1 {
+    font-size: 50px;
+    font-family: var(--bold);
+
+    margin-top: 50px;
+  }
+
+  .informacoes-produto div {
+    max-width: 550px;
+    line-height: 150%;
+
+    margin-top: 50px;
+  }
+
+  .informacoes-produto .valor {
+    font-size: 25px;
+    font-family: var(--light);
+    margin-top: 50px;
+  }
+
+  .informacoes-produto .preco {
+    font-size: 50px;
+    font-family: var(--bold);
+    color: var(--cor-verde-principal);
+  }
+
+  .select {
+    display: none;
+  }
+
+
+  button {
+    position: relative;
+    margin-top: 20px;
+
+    width: 300px;
+    height: 50px;
+    border-radius: 50px;
+
+    background-color: var(--cor-verde-principal);
+    font-family: var(--bold);
+    font-size: 20px;
+
+    margin-top: 50px;
+  }
+
+  .informacoes-produto .adicionar-carrinho {
+    border: 2px solid var(--cor-verde-principal);
+    background-color: var(--cor-branco);
+  }
+
+
 </style>
 
 <script>
