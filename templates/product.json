@@ -3,14 +3,9 @@
     "produto": {
       "type": "produto",
       "settings": {}
-    },
-    "produtosSemelhantes": {
-      "type": "produtosSemelhantes",
-      "settings": {}
     }
   },
   "order": [
-    "produto",
-    "produtosSemelhantes"
+    "produto"
   ]
 }
