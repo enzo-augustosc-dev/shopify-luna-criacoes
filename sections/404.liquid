@@ -1,9 +1,51 @@
-<section class="erro404"></section>
+<section class="erro404">
+  <h1 class="erro-numero">404</h1>
+  <p class="erro-titulo">Página não encontrada</p>
+  <p class="erro-texto">A página que você está procurando não existe ou foi movida.</p>
+
+  <a href="/" class="erro-botao">Voltar para página inicial</a>
+</section>
 
 <style>
   section.erro404 {
-    padding: 100px 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 200px;
   }
+
+  .erro-numero {
+    font-size: 300px;
+    font-family: var(--bold);
+
+    background: linear-gradient(90deg, var(--cor-verde-principal), var(--cor-verde-principal-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .erro-titulo {
+    font-size: 40px;
+    font-family: var(--bold);
+    margin-top: 20px;
+  }
+
+  .erro-texto {
+    font-size: 20px;
+    font-family: var(--light);
+    margin-bottom: 20px;
+  }
+
+  .erro-botao {
+    font-size: 16px;
+    font-family: var(--bold);
+    background-color: var(--cor-verde-principal-hover);
+
+    padding: 20px;
+    border-radius: 50px;
+  }
+
 </style>
 
 <script>
