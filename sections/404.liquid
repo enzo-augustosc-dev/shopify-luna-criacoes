@@ -29,21 +29,37 @@
     font-size: 40px;
     font-family: var(--bold);
     margin-top: 20px;
+
+    background: linear-gradient(90deg, var(--cor-verde-principal), var(--cor-verde-principal-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .erro-texto {
     font-size: 20px;
     font-family: var(--light);
     margin-bottom: 20px;
+
+    background: linear-gradient(90deg, var(--cor-verde-principal), var(--cor-verde-principal-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .erro-botao {
+    color: var(--cor-preto);
     font-size: 16px;
     font-family: var(--bold);
     background-color: var(--cor-verde-principal-hover);
 
     padding: 20px;
     border-radius: 50px;
+  }
+
+  .erro-botao:hover {
+    font-size: 18px;
+    background-color: var(--cor-verde-principal);
+
+    transition: ease-in-out 0.2s;
   }
 
 </style>
