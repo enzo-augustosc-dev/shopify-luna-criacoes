@@ -40,15 +40,17 @@
 
 {% endfor %}
 
-<div class="info-total">
-  <p class="total">Total do Carrinho: {{ cart.total_price | money}}</p>
+{% unless cart.empty? %}
+  <div class="info-total">
+    <p class="total">Total do Carrinho: {{ cart.total_price | money}}</p>
 
-<div class="butons">
-  <button class="update" type="submit" name="update"> Atualizar Quantidade</button>
+  <div class="butons">
+    <button class="update" type="submit" name="update"> Atualizar Quantidade</button>
 
-  <button class="checkout" type="submit" name="checkout">Comprar Agora!</button>
-</div>
-</div>
+    <button class="checkout" type="submit" name="checkout">Comprar Agora!</button>
+  </div>
+  </div>
+{% endunless %}
 
 {% endform %}
 </div>
